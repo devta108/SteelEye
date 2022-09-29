@@ -4,7 +4,7 @@ Steel Eye Python assesment
 As directed in the problem statement all the codefiles are modularised and
 followed pep8 convention...
 
-All essential code is in utils directory...
+All essential code is in utils directory.
 
 The required data is uploaded to s3 bucket
 ![img.png](img.png)
