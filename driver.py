@@ -8,7 +8,7 @@ from utils import get_document
 from utils import get_data_url
 from utils import unzip
 from utils import extract_data_to_csv
-import xml.etree.ElementTree as ET
+from utils import upload_file
 logging.basicConfig(filename='test.log', level=logging.INFO)
 
 
@@ -36,6 +36,8 @@ def main() -> None:
         files = os.listdir('./resources/data')
         for file in files:
             extract_data_to_csv(f'./resources/data/{file}', csv_filepath)
+    upload_file(file_name=csv_filepath, object_name='data.csv', bucket='devta108steeleye')
+    logging.info("Task Done")
 
 
 if __name__ == '__main__':

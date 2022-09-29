@@ -1,9 +1,9 @@
 """
 XML data to csv parsing
 """
+import logging
 import xml.etree.ElementTree as ET
 import csv
-import os
 
 
 def extract_data_to_csv(xml_path, csv_path):
@@ -12,9 +12,9 @@ def extract_data_to_csv(xml_path, csv_path):
     :param xml_path: xml data path
     :param csv_path: final destination path
     """
+    logging.info('Started Parsing XML to CSV')
     tree = ET.parse(xml_path)
     root = tree.getroot()
-    headers = set(['Id', 'FullNm', 'ClssfctnTp', 'CmmdtyDerivInd', 'NtnlCcy', 'Issr'])
     data = {
         'Id': "",
         'FullNm': "",
@@ -44,3 +44,4 @@ def extract_data_to_csv(xml_path, csv_path):
                  data['NtnlCcy'],
                  data['Issr']
                  ])
+    logging.info('Successfully parsed XML to CSV')
