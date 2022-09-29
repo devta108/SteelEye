@@ -30,7 +30,7 @@ def get_document(url=None, file_name=None):
         logging.info('Nothing found out of URL')
         return None
     logging.info('getting the extension of file to be saved as')
-    with open(f"D:/Codefiles/personal/SteelEye/resources/{file_name}", 'wb') as f:
+    with open(f"./resources/{file_name}", 'wb') as f:
         logging.info('Writing the document file')
         f.write(r.content)
     return f
